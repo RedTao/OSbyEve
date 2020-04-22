@@ -1,17 +1,19 @@
-TOOLPATH = ../z_tools/
-INCPATH  = ../z_tools/haribote/
+TOOLPATH 	= ../z_tools/
+INCPATH  	= ../z_tools/haribote/
+BINPATH		= ./bin/	
 
-MAKE     = $(TOOLPATH)make.exe -r
-NASK     = $(TOOLPATH)nask.exe
-CC1      = $(TOOLPATH)cc1.exe -I$(INCPATH) -Os -Wall -quiet
-GAS2NASK = $(TOOLPATH)gas2nask.exe -a
-OBJ2BIM  = $(TOOLPATH)obj2bim.exe
-BIM2HRB  = $(TOOLPATH)bim2hrb.exe
-RULEFILE = $(TOOLPATH)haribote/haribote.rul
-EDIMG    = $(TOOLPATH)edimg.exe
-IMGTOL   = $(TOOLPATH)imgtol.com
-COPY     = copy
-DEL      = del
+
+MAKE     	= $(TOOLPATH)make.exe -r
+NASK     	= $(TOOLPATH)nask.exe
+CC1      	= $(TOOLPATH)cc1.exe -I$(INCPATH) -Os -Wall -quiet
+GAS2NASK 	= $(TOOLPATH)gas2nask.exe -a
+OBJ2BIM  	= $(TOOLPATH)obj2bim.exe
+BIM2HRB  	= $(TOOLPATH)bim2hrb.exe
+RULEFILE 	= $(TOOLPATH)haribote/haribote.rul
+EDIMG    	= $(TOOLPATH)edimg.exe
+IMGTOL   	= $(TOOLPATH)imgtol.com
+COPY     	= copy
+DEL      	= del
 
 # 默认动作
 
@@ -21,7 +23,7 @@ default :
 # 镜像文件生成
 
 boot.bin : boot.nas Makefile
-	$(NASK) boot.nas boot.bin boot.lst
+	$(NASK) boot.nas $(BINPATH)boot.bin $(BINPATH)boot.lst
 
 asmhead.bin : asmhead.nas Makefile
 	$(NASK) asmhead.nas asmhead.bin asmhead.lst
