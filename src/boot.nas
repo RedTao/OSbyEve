@@ -1,0 +1,1 @@
+;boot of OS
